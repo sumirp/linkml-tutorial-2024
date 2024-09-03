@@ -19,7 +19,7 @@ prefixes:
   ENVO: http://purl.obolibrary.org/obo/ENVO_
   SIO: http://semanticscience.org/resource/
   nmdc: https://w3id.org/nmdc/
-  https://kbase.us/
+  KBase: https://kbase.us/
 default_prefix: linkml_tutorial_2024
 default_range: string
 
