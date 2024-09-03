@@ -38,7 +38,8 @@ classes:
   
   Sample:
     aliases: ["Biosample", "Environmental Sample"]
-    description: A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, 
+    description: >- 
+      A sample is a limited quantity of something (e.g. an individual or set of individuals from a population, 
       or a portion of a substance) to be used for testing, analysis, inspection, investigation, demonstration, 
       or trial use.
     slots:
@@ -57,7 +58,8 @@ classes:
 
     SoilSample:
       is_a: Sample
-      description: A sample of biological matetrial
+      description: >- 
+        A sample of soil
       slots:
         - depth
       slot_usage:
@@ -66,7 +68,8 @@ classes:
     
     AirSample:
       is_a: Sample
-      description: A sample of air
+      description: >- 
+        A sample of air
       slots:
         - altitude
       slot_usage:
