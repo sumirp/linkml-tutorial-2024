@@ -1,0 +1,5 @@
+extends: recommended
+rules:
+  canonical_prefixes:
+    prefixmaps_contexts:
+      - obo
