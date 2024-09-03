@@ -1,15 +1,15 @@
 ---
-id: https://w3id.org/sumirp/linkml-tutorial-2024
+id: https://w3id.org/linkml/linkml-tutorial-2024
 name: linkml-tutorial-2024
 title: linkml-tutorial-2024
 description: |-
-  This is the LinkML tutorial project 2024
+  A repostitory that walks through schema generation.
 license: MIT
 see_also:
-  - https://sumirp.github.io/linkml-tutorial-2024
+  - https://linkml.github.io/linkml-tutorial-2024
 
 prefixes:
-  linkml_tutorial_2024: https://w3id.org/sumirp/linkml-tutorial-2024/
+  linkml_tutorial_2024: https://w3id.org/linkml/linkml-tutorial-2024/
   linkml: https://w3id.org/linkml/
   biolink: https://w3id.org/biolink/
   schema: http://schema.org/
@@ -27,15 +27,14 @@ imports:
   - linkml:types
 
 classes:
-  
+
   SampleCollection:
     description: >-
       A collection of samples.
     slots:
       - samples
     tree_root: true
-  
-  
+
   Sample:
     aliases: ["Biosample", "Environmental Sample"]
     description: >- 
@@ -44,39 +43,39 @@ classes:
       or trial use.
     slots:
       - id
-      - sample_biome
-      - sample_type
-      - species
       - latitude
       - longitude
+      - species
+      - sample_biome
+      - sample_type
     id_prefixes:
-      - nmdc
       - KBase
+      - nmdc
     exact_mappings:
       - SIO:001050
     class_uri: SIO:001050
 
-    SoilSample:
-      is_a: Sample
-      description: >- 
-        A sample of soil
-      slots:
-        - depth
-      slot_usage:
+  AirSample:
+    description: >-
+      A sample of air
+    is_a: Sample
+    slots:
+      - altitude
+    slot_usage:
+      id:
+        pattern: '^airsample:\d*'   ## regular expression for the id
+
+
+  SoilSample:
+    description: >-
+      A sample of soil
+    is_a: Sample
+    slots:
+      - depth
+    slot_usage:
         id:
-          patterns: '^soilsample:\d*'    ## regular expression for the id
-    
-    AirSample:
-      is_a: Sample
-      description: >- 
-        A sample of air
-      slots:
-        - altitude
-      slot_usage:
-        id:
-          patterns: '^airsample:\d*'     ## regular expression for the id
-      
-  
+          pattern: '^soilsample:\d*'   ## regular expression for the id
+
 slots:
     id:
         description: >-
@@ -93,6 +92,8 @@ slots:
           Latitude is a geographic coordinate which refers to the angle from a point on the Earth's surface to the 
           equatorial plane.
         range: float
+        minimum_value: -90
+        maximum_value: 90
         slot_uri: schema:latitude
     longitude:
         description: >-
@@ -145,3 +146,5 @@ enums:
           include_self: false
           relationship_types:
             - rdfs:subClassOf
+
+
