@@ -3,3 +3,7 @@ rules:
   canonical_prefixes:
     prefixmaps_contexts:
       - obo
+  tree_root_class:
+    level: error
+    root_class_name: SampleCollection
+    validate_existing_class_name: true
