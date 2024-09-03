@@ -324,8 +324,8 @@
 
 
 <h1 id="slot-id">Slot: id</h1>
-<p><em>A unique identifier for a thing</em></p>
-<p>URI: <a href="http://schema.org/identifier">schema:identifier</a></p>
+<p><em>The unique identifier for the biosample.</em></p>
+<p>URI: <a href="https://w3id.org/linkml/linkml-tutorial-2024/id">linkml_tutorial_2024:id</a></p>
 <!-- no inheritance hierarchy -->
 
 <h2 id="applicable-classes">Applicable Classes</h2>
@@ -339,21 +339,26 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../Person/">Person</a></td>
-<td>Represents a Person</td>
+<td><a href="../AirSample/">AirSample</a></td>
+<td>A sample of air</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Sample/">Sample</a></td>
+<td>A sample is a limited quantity of something (e</td>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../NamedThing/">NamedThing</a></td>
-<td>A generic grouping for any identifiable entity</td>
-<td>no</td>
+<td><a href="../SoilSample/">SoilSample</a></td>
+<td>A sample of soil</td>
+<td>yes</td>
 </tr>
 </tbody>
 </table>
 <h2 id="properties">Properties</h2>
 <ul>
 <li>
-<p>Range: <a href="../Uriorcurie/">Uriorcurie</a></p>
+<p>Range: <a href="../String/">String</a></p>
 </li>
 <li>
 <p>Required: True</p>
@@ -362,7 +367,7 @@
 <h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://w3id.org/sumirp/linkml-tutorial-2024</li>
+<li>from schema: https://w3id.org/linkml/linkml-tutorial-2024</li>
 </ul>
 <h2 id="mappings">Mappings</h2>
 <table>
@@ -375,7 +380,7 @@
 <tbody>
 <tr>
 <td>self</td>
-<td>schema:identifier</td>
+<td>linkml_tutorial_2024:id</td>
 </tr>
 <tr>
 <td>native</td>
@@ -387,15 +392,14 @@
 <details>
 
 <pre><code class="language-yaml">name: id
-description: A unique identifier for a thing
-from_schema: https://w3id.org/sumirp/linkml-tutorial-2024
+description: The unique identifier for the biosample.
+from_schema: https://w3id.org/linkml/linkml-tutorial-2024
 rank: 1000
-slot_uri: schema:identifier
 identifier: true
 alias: id
 domain_of:
-- NamedThing
-range: uriorcurie
+- Sample
+range: string
 required: true
 
 </code></pre>
